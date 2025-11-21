@@ -6,7 +6,10 @@
 # 6. Add apples and eating
 
 class Snake:
-    pass
+    def __init__(self, init_body, init_direction):
+        self.body = init_body
+        self.direction = init_direction
+
 
 
 class Apple:
