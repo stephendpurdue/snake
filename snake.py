@@ -10,6 +10,15 @@ class Snake:
         self.body = init_body
         self.direction = init_direction
 
+    def take_step(self, position):
+        self.body = self.body[1:] + [position]
+
+    def set_directon(self, direction):
+        self.direction = direction
+
+    def head(self):
+        return self.body[-1]
+
 
 
 class Apple:
@@ -20,6 +29,7 @@ class Game:
     def __init__(self, height, width): # Defines height and width variables.
         self.height = height
         self.width = width
+        self.snake = Snake([(0, 0), (1, 0), (2, 0), (3, 0)])
 
     def board_matrix(self):
         return [[None for _ in range(self.width)] for _ in range(self.height)] # Returns _ for each defined self.height and self.width.
